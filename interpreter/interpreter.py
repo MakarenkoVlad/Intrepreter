@@ -263,6 +263,7 @@ def create_global_env():
 
 
 def evaluate_env(s, env):
+    print(f'Поток #{threading.get_ident()}')
     lexer = Lexer()
     try:
         tokens = lexer.tokenize(s)
@@ -285,12 +286,10 @@ def evaluate_env(s, env):
 
 def evaluate(s, number=1):
     if number == 1:
-        print(f'Поток #{threading.get_ident()}')
         evaluate_env(s, create_global_env())
         print()
         return
 
     for i in range(1, number+1):
-        print(f'Поток #{threading.get_ident()} (итерация #{i} из {number})')
-        evaluate_env(s, create_global_env())
+        threading.Thread(target=evaluate_env, args=(s, create_global_env())).start()
         print()
