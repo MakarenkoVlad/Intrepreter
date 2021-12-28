@@ -27,10 +27,16 @@ def main():
         code = ''
         while True:
             line = input()
-            if line == 'KONETS':
+            if line == 'END':
                 break
-            code += line
-            code += '\n'
+            if line == "Z":
+                try:
+                    code = code[0:code.rindex("\n", 0, len(code) - 2)] + "\n"
+                except:
+                    code = ""
+            else:
+                code += line
+                code += '\n'
 
         programs[name] = code
 

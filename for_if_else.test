@@ -1,6 +1,6 @@
-digits = [1,2,3,4]
-DLYA elem V digits:
-    ESLI elem > 2:
-        print('big')
-    INACHE:
-        print('little')
+a = [1, 2, 3, 4, 5]
+ELEM n OF a:
+        WHETHER n > 3:
+                print('big')
+        OTHERWISE:  
+                print('small')

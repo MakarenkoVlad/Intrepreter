@@ -67,13 +67,13 @@ class Lexer(object):
     ]
 
     keywords = {
-        'INACHE': 'ELSE',
-        'ESLI': 'IF',
-        'POKA': 'WHILE',
-        'PRERVAT': 'BREAK',
-        'DALSHE': 'CONTINUE',
-        'DLYA': 'FOR',
-        'V': 'IN',
+        'OTHERWISE': 'ELSE',
+        'WHETHER': 'IF',
+        'RUN': 'WHILE',
+        'STOP': 'BREAK',
+        'GO': 'CONTINUE',
+        'ELEM': 'FOR',
+        'OF': 'IN',
     }
 
     ignore_tokens = [
