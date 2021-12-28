@@ -1,0 +1,6 @@
+digits = [1,2,3,4]
+DLYA elem V digits:
+    ESLI elem > 2:
+        print('big')
+    INACHE:
+        print('little')
