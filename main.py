@@ -4,7 +4,10 @@ import threading
 
 
 def run_thread(code, number):
-    threading.Thread(target=evaluate, args=(code, number)).start()
+    if "input" in code:
+        evaluate(code, number)
+    else:
+        threading.Thread(target=evaluate, args=(code, number)).start()
 
 
 programs = {}
@@ -45,7 +48,6 @@ def main():
         file_path = input('Введите путь к файлу с кодом: ')
         if not os.path.exists(file_path):
             print('Файл не найден')
-
         else:
             code = ''.join(open(file_path).readlines())
             programs[name] = code

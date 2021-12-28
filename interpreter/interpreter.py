@@ -246,6 +246,7 @@ def eval_statements(statements, env):
 def add_builtins(env):
     builtins = {
         'print': (['value'], lambda args, e: print(args['value'])),
+        'input': (['value'], lambda args, e: input(args['value'])),
         'len': (['iter'], lambda args, e: len(args['iter'])),
         'slice': (['iter', 'start', 'stop'], lambda args, e: list(args['iter'][args['start']:args['stop']])),
         'str': (['in'], lambda args, e: str(args['in'])),
@@ -293,4 +294,3 @@ def evaluate(s, number=1):
         print(f'Поток #{threading.get_ident()} (итерация #{i} из {number})')
         evaluate_env(s, create_global_env())
         print()
-        time.sleep(1)
